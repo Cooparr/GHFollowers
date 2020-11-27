@@ -9,6 +9,7 @@ import UIKit
 
 class FavouritesListVC: UIViewController {
 
+    //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemRed
