@@ -21,11 +21,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = createTabBar()
         window?.makeKeyAndVisible()
+        
+        configureNavigationBar()
     }
     
     
     //MARK: Create Nav Controller
-    fileprivate func createNC(vc: UIViewController, title: String, iconName: String) -> UINavigationController {
+    private func createNC(vc: UIViewController, title: String, iconName: String) -> UINavigationController {
         vc.title = title
         vc.tabBarItem.image = UIImage(systemName: iconName)
         return UINavigationController(rootViewController: vc)
@@ -33,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     
     //MARK: Create TabBar
-    fileprivate func createTabBar() -> UITabBarController {
+    private func createTabBar() -> UITabBarController {
         let tabBar = UITabBarController()
         UITabBar.appearance().tintColor = .systemGreen
         
@@ -42,6 +44,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             createNC(vc: FavouritesListVC(), title: "Favorites", iconName: "star.fill")
         ]
         return tabBar
+    }
+    
+    
+    //MARK: Configure Navigation Bar
+    private func configureNavigationBar() {
+        UINavigationBar.appearance().tintColor = .systemGreen
     }
     
     

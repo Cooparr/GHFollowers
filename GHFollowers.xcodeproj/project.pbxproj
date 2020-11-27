@@ -15,6 +15,7 @@
 		1E862F9225705DC800FB6B98 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E862F9125705DC800FB6B98 /* SearchVC.swift */; };
 		1EB8788625711E4D0039422E /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB8788525711E4D0039422E /* GFButton.swift */; };
 		1EB8788B257122500039422E /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB8788A257122500039422E /* GFTextField.swift */; };
+		1EB8788F2571315C0039422E /* FollowersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB8788E2571315C0039422E /* FollowersListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		1E862F9125705DC800FB6B98 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		1EB8788525711E4D0039422E /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 		1EB8788A257122500039422E /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
+		1EB8788E2571315C0039422E /* FollowersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				1E862F7E257037FB00FB6B98 /* FavouritesListVC.swift */,
 				1EB8788525711E4D0039422E /* GFButton.swift */,
 				1EB8788A257122500039422E /* GFTextField.swift */,
+				1EB8788E2571315C0039422E /* FollowersListVC.swift */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EB8788B257122500039422E /* GFTextField.swift in Sources */,
+				1EB8788F2571315C0039422E /* FollowersListVC.swift in Sources */,
 				1E862F9225705DC800FB6B98 /* SearchVC.swift in Sources */,
 				1EB8788625711E4D0039422E /* GFButton.swift in Sources */,
 				1E862F7F257037FB00FB6B98 /* FavouritesListVC.swift in Sources */,
