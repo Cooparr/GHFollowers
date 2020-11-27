@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E5A096025717E3300A071DC /* GFAlertContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A095F25717E3300A071DC /* GFAlertContainer.swift */; };
 		1E862F7B257037FB00FB6B98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E862F7A257037FB00FB6B98 /* AppDelegate.swift */; };
 		1E862F7D257037FB00FB6B98 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E862F7C257037FB00FB6B98 /* SceneDelegate.swift */; };
 		1E862F7F257037FB00FB6B98 /* FavouritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E862F7E257037FB00FB6B98 /* FavouritesListVC.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E5A095F25717E3300A071DC /* GFAlertContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertContainer.swift; sourceTree = "<group>"; };
 		1E862F77257037FB00FB6B98 /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E862F7A257037FB00FB6B98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E862F7C257037FB00FB6B98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E5B910725717BA900B5F1CD /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1E862F9125705DC800FB6B98 /* SearchVC.swift */,
+				1E862F7E257037FB00FB6B98 /* FavouritesListVC.swift */,
+				1EB8788E2571315C0039422E /* FollowersListVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1E5B910825717BDF00B5F1CD /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				1EB87897257148FD0039422E /* GFAlertVC.swift */,
+				1E5A095F25717E3300A071DC /* GFAlertContainer.swift */,
+				1EB8788525711E4D0039422E /* GFButton.swift */,
+				1EB8788A257122500039422E /* GFTextField.swift */,
+				1EB87891257146F70039422E /* GFTitleLabel.swift */,
+				1EB878942571484B0039422E /* GFBodyLabel.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		1E5B910925717C0B00B5F1CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1EB8789A25714E630039422E /* ViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1E5B910A25717C6F00B5F1CD /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				1E862F7A257037FB00FB6B98 /* AppDelegate.swift */,
+				1E862F7C257037FB00FB6B98 /* SceneDelegate.swift */,
+				1E862F83257037FC00FB6B98 /* Assets.xcassets */,
+				1E862F85257037FC00FB6B98 /* LaunchScreen.storyboard */,
+				1E862F88257037FC00FB6B98 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		1E862F6E257037FB00FB6B98 = {
 			isa = PBXGroup;
 			children = (
@@ -70,20 +115,10 @@
 		1E862F79257037FB00FB6B98 /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
-				1E862F7A257037FB00FB6B98 /* AppDelegate.swift */,
-				1E862F7C257037FB00FB6B98 /* SceneDelegate.swift */,
-				1E862F83257037FC00FB6B98 /* Assets.xcassets */,
-				1E862F85257037FC00FB6B98 /* LaunchScreen.storyboard */,
-				1E862F88257037FC00FB6B98 /* Info.plist */,
-				1E862F9125705DC800FB6B98 /* SearchVC.swift */,
-				1E862F7E257037FB00FB6B98 /* FavouritesListVC.swift */,
-				1EB8788525711E4D0039422E /* GFButton.swift */,
-				1EB8788A257122500039422E /* GFTextField.swift */,
-				1EB8788E2571315C0039422E /* FollowersListVC.swift */,
-				1EB87891257146F70039422E /* GFTitleLabel.swift */,
-				1EB878942571484B0039422E /* GFBodyLabel.swift */,
-				1EB87897257148FD0039422E /* GFAlertVC.swift */,
-				1EB8789A25714E630039422E /* ViewController+Ext.swift */,
+				1E5B910825717BDF00B5F1CD /* Custom Views */,
+				1E5B910725717BA900B5F1CD /* Screens */,
+				1E5B910925717C0B00B5F1CD /* Extensions */,
+				1E5B910A25717C6F00B5F1CD /* Support */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
@@ -166,6 +201,7 @@
 				1EB878952571484B0039422E /* GFBodyLabel.swift in Sources */,
 				1EB87892257146F70039422E /* GFTitleLabel.swift in Sources */,
 				1E862F7F257037FB00FB6B98 /* FavouritesListVC.swift in Sources */,
+				1E5A096025717E3300A071DC /* GFAlertContainer.swift in Sources */,
 				1E862F7B257037FB00FB6B98 /* AppDelegate.swift in Sources */,
 				1E862F7D257037FB00FB6B98 /* SceneDelegate.swift in Sources */,
 			);
@@ -308,7 +344,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7QL2BBMJJN;
-				INFOPLIST_FILE = GHFollowers/Info.plist;
+				INFOPLIST_FILE = GHFollowers/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -327,7 +363,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7QL2BBMJJN;
-				INFOPLIST_FILE = GHFollowers/Info.plist;
+				INFOPLIST_FILE = GHFollowers/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
