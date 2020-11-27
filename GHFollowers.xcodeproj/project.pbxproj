@@ -62,11 +62,11 @@
 			children = (
 				1E862F7A257037FB00FB6B98 /* AppDelegate.swift */,
 				1E862F7C257037FB00FB6B98 /* SceneDelegate.swift */,
-				1E862F9125705DC800FB6B98 /* SearchVC.swift */,
-				1E862F7E257037FB00FB6B98 /* FavouritesListVC.swift */,
 				1E862F83257037FC00FB6B98 /* Assets.xcassets */,
 				1E862F85257037FC00FB6B98 /* LaunchScreen.storyboard */,
 				1E862F88257037FC00FB6B98 /* Info.plist */,
+				1E862F9125705DC800FB6B98 /* SearchVC.swift */,
+				1E862F7E257037FB00FB6B98 /* FavouritesListVC.swift */,
 				1EB8788525711E4D0039422E /* GFButton.swift */,
 				1EB8788A257122500039422E /* GFTextField.swift */,
 			);
