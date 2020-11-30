@@ -10,9 +10,7 @@ import UIKit
 class FollowersListVC: UIViewController {
 
     //MARK: Section Enum
-    enum Section {
-        case main
-    }
+    enum Section { case main }
     
     
     //MARK: Properties
@@ -49,30 +47,18 @@ class FollowersListVC: UIViewController {
     
     //MARK: Configure Collection View
     fileprivate func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout())
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         view.addSubview(collectionView)
         collectionView.backgroundColor = .systemBackground
         collectionView.register(GFFollowerCell.self, forCellWithReuseIdentifier: GFFollowerCell.reuseId)
     }
     
     
-    //MARK: Create Three Column Flow Layout
-    fileprivate func createThreeColumnFlowLayout() -> UICollectionViewFlowLayout {
-        let width = view.frame.width
-        let padding: CGFloat = 12
-        let minimumItemSpacing: CGFloat = 10
-        let avaliableWidth = width - (padding * 2) - (minimumItemSpacing * 2)
-        let itemWidth = avaliableWidth / 3
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-        flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth + 40)
-        return flowLayout
-    }
-    
-    
     //MARK: Get Followers
     fileprivate func getFollowers() {
-        NetworkManager.shared.getFollowers(for: username, page: 1) { result in
+        NetworkManager.shared.getFollowers(for: username, page: 1) { [weak self] result in
+            guard let self = self else { return }
+            
             switch result {
             case .success(let followers):
                 self.followers = followers
