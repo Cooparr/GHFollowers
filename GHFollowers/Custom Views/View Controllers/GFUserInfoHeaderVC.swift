@@ -30,7 +30,6 @@ class GFUserInfoHeaderVC: UIViewController {
     //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
         layoutUI()
         configureUIElements()
     }
@@ -51,24 +50,12 @@ class GFUserInfoHeaderVC: UIViewController {
     }
     
     
-    //MARK: Add Subviews
-    fileprivate func addSubviews() {
-        view.addSubview(avatarImageView)
-        view.addSubview(usernameLabel)
-        view.addSubview(nameLabel)
-        view.addSubview(locationImageView)
-        view.addSubview(locationLabel)
-        view.addSubview(bioLabel)
-    }
-    
-    
     //MARK: Layout UI
     fileprivate func layoutUI() {
         let padding: CGFloat = 20
         let textImagePadding: CGFloat = 12
         
         view.addSubviews(avatarImageView, usernameLabel, nameLabel, locationImageView, locationLabel, bioLabel)
-        
         locationImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
