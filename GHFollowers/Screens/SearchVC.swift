@@ -22,6 +22,9 @@ class SearchVC: UIViewController {
     //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameTextField.text = "SAllen0400"
+        
         view.backgroundColor = .systemBackground
         configureLogoImageView()
         configureTextField()
