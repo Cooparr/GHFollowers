@@ -13,6 +13,7 @@ class SearchVC: UIViewController {
     let logoImageView = UIImageView()
     let usernameTextField = GFTextField()
     let getFollowersButton = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
+    var logoImageViewTopConstraint: NSLayoutConstraint!
     
     var isUserNameEntered: Bool {
         return !(usernameTextField.text?.isEmpty ?? false)
@@ -22,8 +23,6 @@ class SearchVC: UIViewController {
     //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        usernameTextField.text = "SAllen0400"
         
         view.backgroundColor = .systemBackground
         configureLogoImageView()
@@ -36,13 +35,14 @@ class SearchVC: UIViewController {
     //MARK: View Will Appear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        usernameTextField.text = ""
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     
     //MARK: Create Dismiss Keyboard Tap Gesture
     private func createDismissKeyboardTapGesture() {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
     }
     
@@ -54,9 +54,9 @@ class SearchVC: UIViewController {
             return
         }
         
-        let followerListVC = FollowersListVC()
-        followerListVC.username = usernameTextField.text
-        followerListVC.title = usernameTextField.text
+        usernameTextField.resignFirstResponder()
+        
+        let followerListVC = FollowersListVC(username: usernameTextField.text!)
         navigationController?.pushViewController(followerListVC, animated: true)
     }
     
@@ -65,10 +65,13 @@ class SearchVC: UIViewController {
     private func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")
+        logoImageView.image = Images.ghLogo
+        
+        let topConstraintConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
+        logoImageViewTopConstraint = logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topConstraintConstant)
         
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
+            logoImageViewTopConstraint,
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.55),
             logoImageView.widthAnchor.constraint(equalTo: logoImageView.heightAnchor)

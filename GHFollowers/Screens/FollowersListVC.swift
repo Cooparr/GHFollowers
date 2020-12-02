@@ -29,6 +29,14 @@ class FollowersListVC: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
     
     
+    //MARK: Custom Init
+    init(username: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.username = username
+        title = username
+    }
+    
+    
     //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,6 +161,12 @@ class FollowersListVC: UIViewController {
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
+    }
+    
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 

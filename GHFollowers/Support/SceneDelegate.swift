@@ -19,31 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = createTabBar()
+        window?.rootViewController = GFTabBarController()
         window?.makeKeyAndVisible()
         
         configureNavigationBar()
-    }
-    
-    
-    //MARK: Create Nav Controller
-    private func createNC(vc: UIViewController, title: String, iconName: String) -> UINavigationController {
-        vc.title = title
-        vc.tabBarItem.image = UIImage(systemName: iconName)
-        return UINavigationController(rootViewController: vc)
-    }
-    
-    
-    //MARK: Create TabBar
-    private func createTabBar() -> UITabBarController {
-        let tabBar = UITabBarController()
-        UITabBar.appearance().tintColor = .systemGreen
-        
-        tabBar.viewControllers = [
-            createNC(vc: SearchVC(), title: "Search", iconName: "magnifyingglass"),
-            createNC(vc: FavouritesListVC(), title: "Favorites", iconName: "star.fill")
-        ]
-        return tabBar
     }
     
     
