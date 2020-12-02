@@ -10,10 +10,19 @@ import UIKit
 class GFItemInfoVC: UIViewController {
 
     //MARK: Properties
+    var user: User!
+    
     let stackView = UIStackView()
     let itemInfoViewOne = GFItemInfoView()
     let itemInfoViewTwo = GFItemInfoView()
     let actionButton = GFButton()
+    
+    
+    //MARK: Custom Init
+    init(user: User) {
+        super.init(nibName: nil, bundle: nil)
+        self.user = user
+    }
     
     
     //MARK: View Did Load
@@ -59,5 +68,11 @@ class GFItemInfoVC: UIViewController {
         stackView.distribution = .equalSpacing
         stackView.addArrangedSubview(itemInfoViewOne)
         stackView.addArrangedSubview(itemInfoViewTwo)
+    }
+    
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
