@@ -15,6 +15,7 @@ class UserInfoVC: UIViewController {
     let headerView = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
+    let dateLabel = GFBodyLabel(textAlignment: .center)
     
     
     //MARK: View Did Load
@@ -45,6 +46,7 @@ class UserInfoVC: UIViewController {
                     self.addChildVC(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
                     self.addChildVC(childVC: GFRepoItemVC(user: user), to: self.itemViewOne)
                     self.addChildVC(childVC: GFFollowerItemVC(user: user), to: self.itemViewTwo)
+                    self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
                 }
                 
             case .failure(let error):
@@ -59,8 +61,8 @@ class UserInfoVC: UIViewController {
         let padding: CGFloat = 20
         let itemHeight: CGFloat = 140
         
-        view.addSubviews(headerView, itemViewOne, itemViewTwo)
-        for itemView in [headerView, itemViewOne, itemViewTwo] {
+        view.addSubviews(headerView, itemViewOne, itemViewTwo, dateLabel)
+        for itemView in [headerView, itemViewOne, itemViewTwo, dateLabel] {
             itemView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 itemView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
@@ -77,6 +79,9 @@ class UserInfoVC: UIViewController {
             
             itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
             itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
+            
+            dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
+            dateLabel.heightAnchor.constraint(equalToConstant: 18)
         ])
     }
     
