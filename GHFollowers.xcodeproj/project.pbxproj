@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0CA97B2579328000F80F28 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0CA97A2579328000F80F28 /* UITableView+Ext.swift */; };
 		1E1F521825766A2200A4FA2B /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1F521725766A2200A4FA2B /* GFItemInfoView.swift */; };
 		1E1F521B257696CB00A4FA2B /* GFItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1F521A257696CB00A4FA2B /* GFItemInfoVC.swift */; };
 		1E5A096025717E3300A071DC /* GFAlertContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A095F25717E3300A071DC /* GFAlertContainer.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E0CA97A2579328000F80F28 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		1E1F521725766A2200A4FA2B /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
 		1E1F521A257696CB00A4FA2B /* GFItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoVC.swift; sourceTree = "<group>"; };
 		1E5A095F25717E3300A071DC /* GFAlertContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertContainer.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				1EF1EF5F2575E3AD009DDAC4 /* View+Ext.swift */,
 				1E75ADB325771493008A2491 /* Date+Ext.swift */,
 				1E75ADB625771502008A2491 /* String+Ext.swift */,
+				1E0CA97A2579328000F80F28 /* UITableView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				1E661C582574805A00C74308 /* GFAvatarImageView.swift in Sources */,
 				1E7135952571800E001F4683 /* Follower.swift in Sources */,
 				1EF1EF582575D925009DDAC4 /* GFSecondaryTitleLabel.swift in Sources */,
+				1E0CA97B2579328000F80F28 /* UITableView+Ext.swift in Sources */,
 				1E75ADBA257736DB008A2491 /* PersistenceManager.swift in Sources */,
 				1EF1EF522575CB20009DDAC4 /* UserInfoVC.swift in Sources */,
 				1EFC75E925783CFA00D96172 /* GFTabBarController.swift in Sources */,
