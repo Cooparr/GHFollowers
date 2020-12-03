@@ -95,6 +95,7 @@ class NetworkManager {
     //MARK: Download Image
     func downloadImage(from urlString: String, completed: @escaping (UIImage?) -> Void) {
         let cacheKey = NSString(string: urlString)
+        
         if let image = cache.object(forKey: cacheKey) {
             completed(image)
             return
@@ -104,6 +105,7 @@ class NetworkManager {
             completed(Images.avatarPlaceholder)
             return
         }
+        
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             guard let self = self,
                   error == nil,

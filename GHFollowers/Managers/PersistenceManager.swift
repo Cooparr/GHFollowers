@@ -14,9 +14,7 @@ enum PersistenceActionType {
 enum PersistenceManager {
     
     //MARK: Keys Enum
-    enum Keys {
-        static let favorites = "favorites"
-    }
+    enum Keys { static let favorites = "favorites" }
     
     
     //MARK: Properties

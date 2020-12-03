@@ -13,6 +13,7 @@ class GFAvatarImageView: UIImageView {
     let cache = NetworkManager.shared.cache
     let placeholderImage = Images.avatarPlaceholder
     
+    
     //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +27,14 @@ class GFAvatarImageView: UIImageView {
         layer.cornerRadius = 10
         clipsToBounds = true
         image = placeholderImage
+    }
+    
+    
+    //MARK: Download Image
+    func downloadImage(fromURL url: String) {
+        NetworkManager.shared.downloadImage(from: url) { [weak self] image in
+            DispatchQueue.main.async { self?.image = image }
+        }
     }
     
     

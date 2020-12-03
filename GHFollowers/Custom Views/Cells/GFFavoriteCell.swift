@@ -25,16 +25,14 @@ class GFFavoriteCell: UITableViewCell {
     // Set Cell Content
     func set(favorite: Follower) {
         usernameLabel.text = favorite.username
-        NetworkManager.shared.downloadImage(from: favorite.avatarURL) { [weak self] image in
-            DispatchQueue.main.async { self?.avatarImageView.image = image }
-        }
+        avatarImageView.downloadImage(fromURL: favorite.avatarURL)
     }
     
     
     //MARK: Configure
     private func configure() {
         accessoryType = .disclosureIndicator
-        
+
         let padding: CGFloat = 12
         addSubviews(avatarImageView, usernameLabel)
         NSLayoutConstraint.activate([

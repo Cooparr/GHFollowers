@@ -131,10 +131,10 @@
 			isa = PBXGroup;
 			children = (
 				1EB8789A25714E630039422E /* ViewController+Ext.swift */,
-				1EF1EF5F2575E3AD009DDAC4 /* View+Ext.swift */,
 				1E75ADB325771493008A2491 /* Date+Ext.swift */,
-				1E75ADB625771502008A2491 /* String+Ext.swift */,
+				1EF1EF5F2575E3AD009DDAC4 /* View+Ext.swift */,
 				1E0CA97A2579328000F80F28 /* UITableView+Ext.swift */,
+				1E75ADB625771502008A2491 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,14 +158,6 @@
 				1E6354452577E1DB002903FB /* GFFavoriteCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		1E661C5A257491F600C74308 /* UI Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				1E661C5B2574920900C74308 /* UIHelper.swift */,
-			);
-			path = "UI Helpers";
 			sourceTree = "<group>";
 		};
 		1E713597257180EA001F4683 /* Model */ = {
@@ -211,7 +203,6 @@
 				1E71359F25718813001F4683 /* Managers */,
 				1E5B910925717C0B00B5F1CD /* Extensions */,
 				1EB45E962571A6C700CF8E88 /* Utilities */,
-				1E661C5A257491F600C74308 /* UI Helpers */,
 				1E5B910A25717C6F00B5F1CD /* Support */,
 			);
 			path = GHFollowers;
@@ -220,6 +211,7 @@
 		1EB45E962571A6C700CF8E88 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1E661C5B2574920900C74308 /* UIHelper.swift */,
 				1EB45E972571A6DC00CF8E88 /* GFError.swift */,
 				1EF1EF5B2575DF49009DDAC4 /* Constants.swift */,
 			);

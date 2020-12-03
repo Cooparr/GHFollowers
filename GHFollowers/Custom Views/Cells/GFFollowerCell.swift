@@ -25,9 +25,7 @@ class GFFollowerCell: UICollectionViewCell {
     // Set Cell Content
     func set(follower: Follower) {
         usernameLabel.text = follower.username
-        NetworkManager.shared.downloadImage(from: follower.avatarURL) { [weak self] image in
-            DispatchQueue.main.async { self?.avatarImageView.image = image }
-        }
+        avatarImageView.downloadImage(fromURL: follower.avatarURL)
     }
     
     
