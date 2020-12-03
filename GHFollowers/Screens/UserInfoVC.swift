@@ -7,11 +7,9 @@
 
 import UIKit
 
-protocol USerInfoVCDelegate: class {
-    func didTapGitHubProfile(for user: User)
-    func didTapGetFollowers(for user: User)
+protocol UserInfoVCDelegate: class {
+    func didRequestFollowers(for username: String)
 }
-
 
 class UserInfoVC: UIViewController {
 
@@ -23,7 +21,7 @@ class UserInfoVC: UIViewController {
     let itemViewTwo = UIView()
     let dateLabel = GFBodyLabel(textAlignment: .center)
     
-    weak var delegate: FollowerListVCDelegate!
+    weak var delegate: UserInfoVCDelegate!
     
     
     //MARK: View Did Load
@@ -63,15 +61,9 @@ class UserInfoVC: UIViewController {
     
     //MARK: Configure UI Elements
     fileprivate func configureUIElements(with user: User) {
-        let repoItemVC = GFRepoItemVC(user: user)
-        repoItemVC.delegate = self
-        
-        let followerItemVC = GFFollowerItemVC(user: user)
-        followerItemVC.delegate = self
-        
         self.addChildVC(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
-        self.addChildVC(childVC: repoItemVC, to: self.itemViewOne)
-        self.addChildVC(childVC: followerItemVC, to: self.itemViewTwo)
+        self.addChildVC(childVC: GFRepoItemVC(user: user, delegate: self), to: self.itemViewOne)
+        self.addChildVC(childVC: GFFollowerItemVC(user: user, delegate: self), to: self.itemViewTwo)
         self.dateLabel.text = "GitHub since \(user.createdAt.convertToMonthYearFormat())"
     }
     
@@ -81,8 +73,9 @@ class UserInfoVC: UIViewController {
         let padding: CGFloat = 20
         let itemHeight: CGFloat = 140
         
-        view.addSubviews(headerView, itemViewOne, itemViewTwo, dateLabel)
-        for itemView in [headerView, itemViewOne, itemViewTwo, dateLabel] {
+        let itemViews = [headerView, itemViewOne, itemViewTwo, dateLabel]
+        for itemView in itemViews {
+            view.addSubview(itemView)
             itemView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 itemView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
@@ -92,7 +85,7 @@ class UserInfoVC: UIViewController {
         
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 180),
+            headerView.heightAnchor.constraint(equalToConstant: 210),
             
             itemViewOne.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
             itemViewOne.heightAnchor.constraint(equalToConstant: itemHeight),
@@ -101,7 +94,7 @@ class UserInfoVC: UIViewController {
             itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
             
             dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
-            dateLabel.heightAnchor.constraint(equalToConstant: 18)
+            dateLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -121,7 +114,8 @@ class UserInfoVC: UIViewController {
     }
 }
 
-extension UserInfoVC: USerInfoVCDelegate {
+
+extension UserInfoVC: GFRepoItemVCDelegate {
     
     //MARK: Did Tap GitHub Profile
     func didTapGitHubProfile(for user: User) {
@@ -133,12 +127,17 @@ extension UserInfoVC: USerInfoVCDelegate {
         }
         presentSafariVC(with: url)
     }
-    
+}
+
+
+extension UserInfoVC: GFFollowerItemVCDelegate {
     
     //MARK: Did Tap Get Followers
     func didTapGetFollowers(for user: User) {
         guard user.followers != 0 else {
-            presentGFAlertOnMainThread(title: "No Followers", message: "This user has no followers. You could follow them? 😔", buttonTitle: "Ok")
+            presentGFAlertOnMainThread(title: "No Followers",
+                                       message: "This user has no followers. You could follow them? 😔",
+                                       buttonTitle: "Ok")
             return
         }
         

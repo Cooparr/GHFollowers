@@ -7,7 +7,22 @@
 
 import Foundation
 
+protocol GFFollowerItemVCDelegate: class {
+    func didTapGetFollowers(for user: User)
+}
+
 class GFFollowerItemVC: GFItemInfoVC {
+    
+    //MARK: Properties
+    weak var delegate: GFFollowerItemVCDelegate!
+    
+    
+    //MARK: Custom Init
+    init(user: User, delegate: GFFollowerItemVCDelegate) {
+        super.init(user: user)
+        self.delegate = delegate
+    }
+    
     
     //MARK: View Did Load
     override func viewDidLoad() {
@@ -27,5 +42,11 @@ class GFFollowerItemVC: GFItemInfoVC {
     //MARK: Action Button Tapped
     override func actionButtonTapped() {
         delegate.didTapGetFollowers(for: user)
+    }
+    
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

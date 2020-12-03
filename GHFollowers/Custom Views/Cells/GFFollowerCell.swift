@@ -33,10 +33,8 @@ class GFFollowerCell: UICollectionViewCell {
     
     //MARK: Configure
     private func configure() {
-        addSubview(avatarImageView)
-        addSubview(usernameLabel)
-        
         let padding: CGFloat = 8
+        addSubviews(avatarImageView, usernameLabel)
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),

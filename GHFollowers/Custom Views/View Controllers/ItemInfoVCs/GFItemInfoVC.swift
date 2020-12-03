@@ -11,7 +11,6 @@ class GFItemInfoVC: UIViewController {
 
     //MARK: Properties
     var user: User!
-    weak var delegate: USerInfoVCDelegate!
     
     let stackView = UIStackView()
     let itemInfoViewOne = GFItemInfoView()
