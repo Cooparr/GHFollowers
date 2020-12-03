@@ -9,6 +9,12 @@ import Foundation
 
 extension String {
     
+    /*
+     These functions aren't needed when using JSONDecoder.dateDecodingStrategy = .iso8601
+     Due to recieving Date type when decoding, no longer need to conver from:
+     String -> Date -> String
+     */
+    
     //MARK: Convert To Date
     fileprivate func convertToDate() -> Date? {
         let dateFormatter = DateFormatter()

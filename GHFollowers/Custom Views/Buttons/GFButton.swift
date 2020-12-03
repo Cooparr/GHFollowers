@@ -16,12 +16,11 @@ class GFButton: UIButton {
     }
     
     
-    //MARK: Custom Init
-    init(backgroundColor: UIColor, title: String) {
-        super.init(frame: .zero)
+    //MARK: Convenience Init
+    convenience init(backgroundColor: UIColor, title: String) {
+        self.init(frame: .zero)
         self.backgroundColor = backgroundColor
         self.setTitle(title, for: .normal)
-        configureButton()
     }
     
     

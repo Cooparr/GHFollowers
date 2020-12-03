@@ -25,7 +25,9 @@ class GFFavoriteCell: UITableViewCell {
     // Set Cell Content
     func set(favorite: Follower) {
         usernameLabel.text = favorite.username
-        avatarImageView.downloadImage(from: favorite.avatarURL)
+        NetworkManager.shared.downloadImage(from: favorite.avatarURL) { [weak self] image in
+            DispatchQueue.main.async { self?.avatarImageView.image = image }
+        }
     }
     
     

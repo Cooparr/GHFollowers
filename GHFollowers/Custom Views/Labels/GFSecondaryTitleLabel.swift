@@ -16,11 +16,10 @@ class GFSecondaryTitleLabel: UILabel {
     }
     
     
-    //MARK: Custom Init
-    init(fontSize: CGFloat) {
-        super.init(frame: .zero)
+    //MARK: Convenience Init
+    convenience init(fontSize: CGFloat) {
+        self.init(frame: .zero)
         font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
-        configureLabel()
     }
     
     

@@ -21,11 +21,10 @@ class GFEmptyStateView: UIView {
     }
     
     
-    //MARK: Custom Init
-    init(message: String) {
-        super.init(frame: .zero)
+    //MARK: Convenience Init
+    convenience init(message: String) {
+        self.init(frame: .zero)
         messageLabel.text = message
-        configure()
     }
     
     
