@@ -14,16 +14,16 @@ class GFTabBarController: UITabBarController {
         super.viewDidLoad()
         UITabBar.appearance().tintColor = .systemGreen
         viewControllers = [
-            createNC(vc: SearchVC(), title: "Search", iconName: "magnifyingglass"),
-            createNC(vc: FavouritesListVC(), title: "Favorites", iconName: "star.fill")
+            createNC(vc: SearchVC(), title: "Search", icon: SFSymbols.search),
+            createNC(vc: FavouritesListVC(), title: "Favorites", icon: SFSymbols.favorites)
         ]
     }
 
     
     //MARK: Create Nav Controller
-    private func createNC(vc: UIViewController, title: String, iconName: String) -> UINavigationController {
+    private func createNC(vc: UIViewController, title: String, icon: UIImage?) -> UINavigationController {
         vc.title = title
-        vc.tabBarItem.image = UIImage(systemName: iconName)
+        vc.tabBarItem.image = icon
         return UINavigationController(rootViewController: vc)
     }
 }
