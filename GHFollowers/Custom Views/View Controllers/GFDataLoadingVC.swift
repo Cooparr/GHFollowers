@@ -1,5 +1,5 @@
 //
-//  DataLoadingVC.swift
+//  GFDataLoadingVC.swift
 //  GHFollowers
 //
 //  Created by Alexander James Cooper on 03/12/2020.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DataLoadingVC: UIViewController {
+class GFDataLoadingVC: UIViewController {
 
     //MARK: Properties
     var containerView: UIView!
